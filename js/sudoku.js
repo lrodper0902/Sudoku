@@ -126,6 +126,21 @@ class Sudoku {
         }
     }
 
+    // Mirar esto
+    botonSelec(params) {
+        let botonSeleccionado = document.querySelectorAll('botonN');
+        if(botonSeleccionado.getElementByClassName('BtnFacil'))
+        {
+            return this.miFuncNivel1;
+        }else if(botonSeleccionado.getElementByClassName('BtnFacil'))
+        {
+            return  this.miFuncNivel2;
+        }else if(botonSeleccionado.getElementByClassName('BtnDificil'))
+        {
+            return  this.miFuncNivel3;
+        }
+    }
+
     miFuncNivel1(porcentaje=35) {
         for (let i = 0; i < 81; i++) {
             document.getElementById('td' + i).innerText = this.datos[i] = Math.random()<porcentaje ? this.datos[i]:'';
@@ -189,12 +204,13 @@ celdas.forEach(celda => {
     if(valorDataCelda === 'A' || valorDataCelda === 'C' ||valorDataCelda === 'E' || valorDataCelda ==='G' || valorDataCelda === 'I')
     {
         celda.style.backgroundColor= '#BDF7B0'; //verde
-    }else {
-        celda.style.backgroundColor= ' #FFFFFF';
     }
+    // }else {
+    //     celda.style.backgroundColor= ' #FFFFFF';
+    // }
 });
 
-//Color fila, columnas y minisudoku
+//Color fila, columnas y minisudoku cuadno selecciono celda
 
 
 function establecerColor(id)
@@ -205,45 +221,47 @@ function establecerColor(id)
     //Añadimos el color a las filas y columnas
 
     //Añadimos el color al minisudoku de esa celda selccionada
-    let obtenerClase = id.getAttribute('data-celda');
+    
+    //Evento click
+    let obtenerClase = this.id.getAttribute('data-celda');
 
     switch (obtenerClase) {
-        case 'A':
-        id.style.backgroundColor = '#A5A5A5';
+        case 'A','B','C','D','E','F','H','I':
+        this.id.style.backgroundColor = '#A5A5A5';
 
         break;
-        case 'B':
-        id.style.backgroundColor = '#A5A5A5';
+        // case 'B':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'C':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'C':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'D':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'D':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'E':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'E':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'F':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'F':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'G':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'G':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'H':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'H':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
-        case 'I':
-        id.style.backgroundColor = '#A5A5A5';
+        // break;
+        // case 'I':
+        // id.style.backgroundColor = '#A5A5A5';
 
-        break;
+        // break;
 
         default:
             break;
