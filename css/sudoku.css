@@ -10,7 +10,7 @@ body{
 }
 
 .sudoku{
-    height: 620px;
+    height: 650px;
     width: 500px;
     margin-top: 100px;
     border-radius: 10px !important;
@@ -26,28 +26,31 @@ body{
 
 .boton{
     border-radius: 10px;
-    background: #63c478;
+    background: #56a868;
     color:white;
     margin-top: 10px;
     padding: 8px 12px;
     border: 0px;
 }
 
+.boton:hover{
+    background: #3b7c51;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
 
 .botonN{
-    padding: 15px 20px;
-    font-size: 20px;
+    padding: 8px 10px;
+    font-size: 14px;
     border-radius: 10px;
-    background: #4ca373;
+    background: #4c80a3;
     border: 0px;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .botonN:hover{
-    background: #3b7c58;
+    background: #3b557c;
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
