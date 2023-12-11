@@ -134,6 +134,8 @@ class Sudoku {
     estaResuelto() {
         // debe devolver true o false
     }
+
+    
 }
 
 function establecerColor(id) {
@@ -141,7 +143,7 @@ function establecerColor(id) {
     let dataCelda = celdaSeleccionada.getAttribute('data-celda');
     let celdas = document.querySelectorAll('[data-celda="' + dataCelda + '"]');
     celdas.forEach(function (celda) {
-        celda.style.backgroundColor = '#51D1F6'; //celeste
+        celda.style.backgroundColor = '#85FEBC'; //celeste
     });
 
     let todasLasCeldas = document.querySelectorAll('.cellnormal');
@@ -155,7 +157,7 @@ function establecerColor(id) {
     let filaCelda = filaSeleccionada.getAttribute('data-fila');
     let filas = document.querySelectorAll('[data-fila="' + filaCelda + '"]');
     filas.forEach(function (fila) {
-        fila.style.backgroundColor = '#51D1F6'; //celeste
+        fila.style.backgroundColor = '#85FEBC'; //celeste
     });
 
     let todasLasFilas = document.querySelectorAll('.cellnormal');
@@ -169,7 +171,7 @@ function establecerColor(id) {
     let columnaCelda = columnaSeleccionada.getAttribute('data-columna');
     let columnas = document.querySelectorAll('[data-columna="' + columnaCelda + '"]');
     columnas.forEach(function (columna) {
-        columna.style.backgroundColor = '#51D1F6'; //celeste
+        columna.style.backgroundColor = '#85FEBC'; //celeste
     });
 
     let todasLascolumna = document.querySelectorAll('.cellnormal');
@@ -236,3 +238,43 @@ document.getElementById('BtnDificil').addEventListener('click', function() {
     miSudoku.nuevo();
     miSudoku.muestra(0.35);
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Guardamos todas las celdas del sudoku y las celdas con los nmeros del 1 al 9
+    const celdas = document.querySelectorAll('.cellnormal'); 
+    const valorCeldas = document.querySelectorAll('.btnSeleccionar');
+    let seleccionarCelda = null;
+
+
+    // Le añadimo el evento click y miramos si esta vacía para poder insertar uno d elos valores del 1 al 9
+    celdas.forEach(celda => {
+        celda.addEventListener('click', function(event) {
+            seleccionarCelda = event.target; //evento clic al selecionar una celda
+
+            if (seleccionarCelda.innerText.trim() === '') {
+                valorCeldas.forEach(valorCelda => {
+                    valorCelda.addEventListener('click', function() {
+                        const valorSelec = valorCelda.innerText;// Obtenemos el valor seleccionado
+                        seleccionarCelda.innerText = valorSelec;
+
+                        establecerColor(seleccionarCelda.id);// Cambiar el color de la celda seleccionada en el Sudoku
+                    });
+                });
+            } else {
+                seleccionarCelda = null;
+            }
+        });
+    });
+
+    function establecerColor(celda) {
+        const seleccionarCelda = document.getElementById(celda);
+        seleccionarCelda.style.backgroundColor = '#B5FDA3'; //color más clarito
+    }
+});
+
+
+
+
+
+

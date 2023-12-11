@@ -10,7 +10,7 @@ body{
 }
 
 .sudoku{
-    height: 650px;
+    height: 700px;
     width: 500px;
     margin-top: 100px;
     border-radius: 10px !important;
@@ -54,6 +54,11 @@ body{
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
+.btnSeleccionar{
+    border-right: 2px solid black;
+    padding: 10px 17.5px;
+}
+
 .botonE{
     padding: 15px 20px;
     font-size: 20px;
@@ -79,6 +84,8 @@ body{
     user-select: none;
     -ms-user-select: none
 }
+
+
 
 h1 {
     font-size: 24px
